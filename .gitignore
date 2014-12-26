@@ -1,0 +1,15 @@
+node_modules
+dist
+.tmp
+.sass-cache
+.idea
+public/lib
+public/scripts/config.js
+test
+/nbproject
+/public/app
+lint-stamp
+config/config.php
+logs/*
+/vendor
+composer.lock

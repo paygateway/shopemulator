@@ -1,0 +1,740 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #000;
+}
+
+html {
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+/*
+::-moz-selection {
+    background: #fff;
+    text-shadow: none;
+}
+
+::selection {
+    background: #fff;
+    text-shadow: none;
+}*/
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browse Happy prompt
+   ========================================================================== */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/** Custom styles **/
+
+/** Bootstrap Customization **/
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus {
+  /*outline: 1px solid #9eb2d6;*/
+  outline: none;
+  background-color: #fff;
+}
+.btn:hover {
+  color: #19489d;
+  border: 1px solid #456bb1;
+  text-decoration: none;
+  background-color: #fff;
+}
+.btn:focus {
+  border-color: #a2b5d8;
+  background-color: #fff;
+}
+.btn:active,
+.btn.active {
+  box-shadow: none;
+  background-color: #fff;
+}
+
+.color-black {
+  color: #000;
+}
+
+.button-like1 {
+  background-color: #fff;
+  border-color: #f2f4f9;
+  border-width: 1px;
+}
+
+.button-like1:hover, .button-like1:focus {
+  background-color: #fff;
+  border: 1px solid #456bb1;
+}
+
+.modal > .button-like1, .navbar-right > .button-like1 {
+    background-color: #fff;
+    border-color: #f2f4f9;
+    border-width: 1px;
+    color: #19489d;
+}
+.modal > .button-like1:hover, .navbar-right > .button-like1 {
+    background-color: #fff;
+    border: 1px solid #456bb1;
+    color: #19489d;
+}
+
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default,
+.button-like1:focus,
+.button-like1:active,
+.button-like1.active,
+.open > .dropdown-toggle.button-like1,
+{
+  color: #19489d;
+  background-color: #fff !important;
+  border-color: #a2b5d8;
+}
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+  background-image: none;
+  background-color: #fff;
+  border-color: #a2b5d8;
+  color: #19489d;
+}
+.btn-default.disabled,
+.btn-default[disabled],
+fieldset[disabled] .btn-default,
+.btn-default.disabled:hover,
+.btn-default[disabled]:hover,
+fieldset[disabled] .btn-default:hover,
+.btn-default.disabled:focus,
+.btn-default[disabled]:focus,
+fieldset[disabled] .btn-default:focus,
+.btn-default.disabled:active,
+.btn-default[disabled]:active,
+fieldset[disabled] .btn-default:active,
+.btn-default.disabled.active,
+.btn-default[disabled].active,
+fieldset[disabled] .btn-default.active {
+  background-color: #fff;
+  border-color: #a2b5d8;
+}
+.btn-default .badge {
+  color: #fff;
+  background-color: #333;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #19489d;
+  border-color: #19489d;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #305aa8;
+  border-color: #305aa8;
+}
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  background-image: none;
+}
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+.btn-primary .badge {
+  color: #428bca;
+  background-color: #fff;
+}
+
+.btn-group.open .dropdown-toggle {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+ .btn-group.open.bootstrap-select .dropdown-toggle {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  background-color: #fffef5;
+  border-color: #eae9e5;
+}
+
+ .input-group-btn:last-child > .btn {
+   margin-left: 0;
+ }
+
+/*.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  color: #fff;
+  text-decoration: none;
+  background-color: #19489d;
+}
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  color: #fff;
+  text-decoration: none;
+  background-color: #19489d;
+  outline: 0;
+}*/
+
+.modal-dialog {
+  margin-top: 15%;
+}
+
+.modal-header {
+  margin: 0 30px;
+  padding: 20px 0 15px 0;
+}
+
+.modal-header h1 {
+  font-weight: 600;
+}
+
+.modal-content {
+  border-radius: 15px;
+}
+
+.modal-body {
+  padding: 20px 30px;
+}
+
+.modal-body .form-group label {
+  font-weight: 400;
+}
+
+.close {
+  opacity: 0.8;
+  font-weight: 500;
+
+}
+
+.modal-header .close {
+  /*margin-top: 10px;*/
+}
+
+.modal-footer {
+  background-color: #dfdfdf;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top-color: #dfdfdf;
+  padding: 20px 30px;
+}
+
+.modal-footer button {
+  font-size: 20px;
+}
+
+a.modal-close {
+  color: #19489d;
+  text-decoration: underline;
+  font-size: 1em;
+}
+/** TAGS **/
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1em;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0 !important;
+}
+
+a, a:hover  {
+  text-decoration: none;
+}
+
+h1 {
+  color: #19489d;
+  font-size: 1.5em;
+}
+
+input:focus {
+  background-color: #fffef5;
+  border: 1px solid #eae9e5;
+  box-shadow: none;
+}
+
+input:hover {
+  border: 1px solid #ced8ea;
+  /*background-color: transparent;*/
+}
+
+a:focus {
+  outline: none;
+}
+
+.label-primary {
+  background-color: #0084ff;
+}
+
+/*.label-success {
+  background-color: #46a941;
+}
+
+.label-danger {
+  background-color: #ff2121;
+}*/
+
+/** END TAGS **/
+
+/** Mixins **/
+
+.table-cell {
+  display: table-cell;
+}
+
+.margin-right-5 {
+  margin-right: 5px;
+}
+
+.margin-right-10 {
+  margin-right: 10px;
+}
+
+.margin-right-23 {
+    margin-right: 23px;
+}
+.margin-right-25 {
+  margin-right: 25px;
+}
+
+.margin-right-30 {
+  margin-right: 30px;
+}
+
+.margin-bottom-10 {
+  margin-bottom: 10px;
+}
+
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
+
+.padding-top-9 {
+  padding-top: 9px;
+}
+
+.margin-top-10 {
+  margin-top: 10px;
+}
+
+@media
+(max-width:768px) {
+  .margin-top-xs-10 {
+    margin-top: 10px;
+  }
+}
+.padding-left-5 {
+  padding-left: 5px;
+}
+
+/** END Mixins **/
+
+/** Flags **/
+.flag {
+	width: 20px;
+	height: 15px;
+	background:url("../img/flagsd.png") no-repeat
+}
+
+.flag.flag-gb {background-position: -17px 0}
+.flag.flag-ru {background-position: 0 -13px}
+/** END Flags **/
+
+
+
+/** Common buttons **/
+button.button-like {
+  display: inline-block;
+  border: 1px solid #fff;
+  background-color: transparent !important;
+  padding: 5px 13px;
+  color: #fff;
+}
+
+.button-like:hover, .button-like:focus {
+  background-color: transparent;
+  color: #fff;
+}
+
+button.help, .button-like a {
+  color: #fff;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  font-weight: lighter;
+  text-decoration: none;
+}
+
+button.help {
+  font-size: 0.9em;
+}
+
+.btn3d {
+  box-shadow: 0 1px 1px 0 #88a0cd inset, 1px 1px 2px 0 #404040;
+  background-color: #19489d;
+}
+
+.btn3d:hover, .btn3d:focus, .btn3d:active {
+  background: linear-gradient(#496eb3,#18469e);
+  background-clip: border-box;
+  box-shadow: 0 1px 1px 0 #88a0cd inset, 1px 1px 2px 0 #404040;
+}
+
+.btn3d-default,.btn3d-default:hover, .btn3d-default:focus, .btn3d-default:active {
+  border-color: #a8a8a8;
+  background-color: #dadada;
+  box-shadow: 1px 1px 2px 0 #404040;
+  color: #000;
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  background: red;
+  cursor: inherit;
+  display: block;
+}
+input[readonly] {
+  background-color: white !important;
+  cursor: text !important;
+}
+/** END Common Buttons **/
+
+
+/** Custom Styled Checkbox **/
+input[type="checkbox"] {
+  visibility: hidden;
+  display: none;
+}
+
+.relative {
+  position: relative;
+  width: 13px;
+  margin: auto;
+}
+
+.relative label {
+	cursor: pointer;
+	position: absolute;
+	width: 13px;
+	height: 13px;
+	top: 5px;
+  left: 0;
+	border: 1px solid #dfdfdf;
+	background: #fff;
+}
+
+.relative label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 9px;
+	height: 5px;
+	background: transparent;
+	top: 1px;
+	left: 1px;
+	border: 3px solid #333;
+	border-top: none;
+	border-right: none;
+
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.relative label:hover::after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+	filter: alpha(opacity=30);
+	opacity: 0.5;
+}
+
+.relative input[type=checkbox]:checked + label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+}
+ /** END Custom Styled Checkbox **/
+
+
+.required {
+  color: red;
+}
+
+.display-none {
+  display: none;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
