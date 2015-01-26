@@ -6,6 +6,7 @@ $mode = $_POST["opertype"];
 $account     = $_POST["account"];
 $transID     = $_POST["transID"];
 $signature   = $_POST["signature"];
+$backURL     = $_POST['backURL'];
 
 $config = getConfig();
 
@@ -18,8 +19,14 @@ switch($mode) {
     $description = urlencode(urldecode($_POST["description"]));
     $trtype      = $_POST["trtype"];
 
+
+
     $testsig  = "$mode:$amount:$amountcurr:$currency:";
-    $testsig .= "$number:$description:$trtype:$account:$transID";
+    $testsig .= "$number:$description:$trtype:$account";
+	  if(!empty($backURL)) {
+		  $testsig .= ":$backURL";
+	  }
+	  $testsig .= ":$transID";
     break;
 	case "block":
 		$amount      = $_POST["amount"];
@@ -30,7 +37,13 @@ switch($mode) {
     $trtype      = $_POST["trtype"];
 
     $testsig  = "$mode:$amount:$amountcurr:$currency:";
-    $testsig .= "$number:$description:$trtype:$account:$transID";
+    $testsig .= "$number:$description:$trtype:$account";
+
+		if(!empty($backURL)) {
+		  $testsig .= ":$backURL";
+	  }
+	  $testsig .= ":$transID";
+
 		break;
   case "terminate":
     $amountterminate = $_POST["amountterminate"];

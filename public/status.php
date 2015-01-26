@@ -10,10 +10,17 @@ $percentplus  = $_POST["percentplus"];
 $percentminus = $_POST["percentminus"];
 $signature    = $_POST["signature"];
 $account = getConfig()['account'];
+$backURL = $_POST['backURL'];
 $transID = $_POST['transID'];
 
 $testsig  = "$amount:$amountcurr:$currency:$number:$payamount:";
-$testsig .= "$percentplus:$percentminus:$account:$transID:";
+$testsig .= "$percentplus:$percentminus:$account";
+
+if(!empty($backURL)) {
+  $testsig .= ":$backURL";
+}
+$testsig .= ":$transID";
+
 $testsig .= getConfig()['key1'].':'.getConfig()['key2'];
 $testsig  = strtoupper(md5($testsig));
 

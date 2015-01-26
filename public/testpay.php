@@ -7,7 +7,12 @@ $config = getConfig();
 $data = $_POST;
 $description = urlencode($data['description']);
 $data['signature'] = "{$data['amount']}:{$data['amountcurr']}:{$data['currency']}:";
-$data['signature'] .= "{$data['number']}:{$description}:{$data['trtype']}:{$data['account']}:{$data['key1']}:{$data['key2']}";
+$data['signature'] .= "{$data['number']}:{$description}:{$data['trtype']}:{$data['account']}";
+
+if(!empty($data['backURL'])) {
+	$data['signature'] .= ":{$data['backURL']}";
+}
+$data['signature'] .= ":{$data['key1']}:{$data['key2']}";
 $data['signature'] = strtoupper(md5($data['signature']));
 
 ?>
@@ -30,5 +35,6 @@ $data['signature'] = strtoupper(md5($data['signature']));
 	<input type=hidden name="signature" value="<?php echo $data['signature'];?>">
 	<input type=hidden name="frontend_uri" value="<?php echo $config['frontend_uri'];?>">
 	<input type=hidden name="shop_uri" value="<?php echo $config['shop_uri'];?>">
+	<input type=hidden name="backURL" value="<?php echo $_POST['backURL'];?>">
 </form>
 </body>
