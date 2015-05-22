@@ -69,8 +69,8 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 			<input type="text" class="form-control" id="account" name="account" value="<?php echo $config['account']; ?>">
 		</div>
 		<div class="form-group">
-			<label for="backURL">BackURL:</label>
-			<input type="text" class="form-control" id="backURL" name="backURL" value="<?php echo $config['shop_uri']; ?>">
+			<label for="backURL">Back URL:</label>
+			<input type="text" class="form-control" id="backURL" name="backURL" value="<?php echo $config['shop_uri']; ?>/back.php">
 		</div>
 		<div class="form-group">
 			<label for="key1">Ключ 1:</label>

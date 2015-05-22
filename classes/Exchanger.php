@@ -1,5 +1,5 @@
 <?php
-
+require '../vendor/autoload.php';
 class Exchanger {
 
 
@@ -185,5 +185,60 @@ class Exchanger {
       }
     }
     return $headers;
+  }
+
+
+  public static function sendPost($url, array $data, $header = "application/x-www-form-urlencoded") {
+		// use key 'http' even if you send the request to https://...
+		$options = array(
+		    'http' => array(
+		        'header'  => "Content-type: $header\r\n",
+		        'method'  => 'POST',
+		        'content' => http_build_query($data),
+		    ),
+		);
+		$context  = stream_context_create($options);
+
+		$resp = file_get_contents($url, false, $context);
+
+		return $resp;
+	}
+
+  public static function operate($opertype, $posted, $config) {
+    $data = array();
+
+    $data['account'] = $config['account'];
+    $data['opertype'] = $opertype;
+    $data['transID'] = $posted['transID'];
+
+    $signature = "{$opertype}:";
+    if ( $opertype != 'check' && $opertype != 'unblock' ) {
+      $signature .= "{$posted['amount']}:";
+      $data['amount' . $opertype] = $posted['amount'];
+    }
+    $signature .= "{$config['account']}:{$data['transID']}:";
+    $signature .= "{$config['key1']}:{$config['key2']}";
+
+    $hashing_method = isset($config['hashing_method']) ? $config['hashing_method'] : 'md5';
+    $hashed = ($hashing_method=='md5') ? $hashing_method($signature) : $hashing_method('sha256',$signature, $config['key1'].$config['key2']);
+
+    $data['signature'] = strtoupper( $hashed );
+
+    $act_url = $config['epos_operate_url'];
+
+    $data['frontend_uri'] = $config['frontend_uri'];
+    $data['shop_uri'] = $config['shop_uri'];
+    $client = new \GuzzleHttp\Client();
+
+    $response = $client->post( $act_url , [
+      'body'    => $data,
+      'verify'  => false
+    ] );
+
+    $resp_data = $response->json();
+
+    return $resp_data;
+
+    //return self::sendPost($act_url.'?XDEBUG_SESSION_START=19496', $data);
   }
 } 

@@ -14,15 +14,19 @@ if ( $data['opertype'] != 'check' && $data['opertype'] != 'unblock' ) {
 	unset($data['amount']);
 
 }
-$data['signature'] .= "{$data['transID']}:{$data['account']}:";
+$data['signature'] .= "{$data['account']}:{$data['transID']}:";
 $data['signature'] .= "{$data['key1']}:{$data['key2']}";
-$data['signature'] = strtoupper( md5( $data['signature'] ) );
+
+$hashing_method = isset($config['hashing_method']) ? $config['hashing_method'] : 'md5';
+$hashed = ($hashing_method=='md5') ? $hashing_method($data['signature']) : $hashing_method('sha256',$data['signature'], $data['key1'].$data['key2']);
+
+$data['signature'] = strtoupper( $hashed );
 
 
 unset($data['key1']);
 unset($data['key2']);
 
-$act_url = $config['epos_operate_url']."?XDEBUG_SESSION_START=10898";
+$act_url = $config['epos_operate_url'];
 
 $data['frontend_uri'] = $config['frontend_uri'];
 $data['shop_uri'] = $config['shop_uri'];
@@ -30,7 +34,8 @@ $data['shop_uri'] = $config['shop_uri'];
 $client = new \GuzzleHttp\Client();
 
 $response = $client->post( $act_url , [
-	'body'    => $data
+	'body'    => $data,
+	'verify'  => false
 ] );
 
 $resp_data = $response->json();

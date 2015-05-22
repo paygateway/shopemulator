@@ -9,7 +9,7 @@
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link
-		href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&subset=latin,cyrillic-ext'
+		href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&subset=latin,cyrillic-ext'
 		rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="css/bootstrap.css">

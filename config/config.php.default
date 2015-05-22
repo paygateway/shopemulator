@@ -1,11 +1,13 @@
 <?php
 function getConfig() {
 	return array(
-		'epos_start_url' => 'https://secure.paygateway.ru/api/payment/start',
-		'epos_operate_url' => 'https://secure.paygateway.ru/api/payment/operate',
+		'epos_start_url' => 'http://paygateway.dev.local/payment/start',
+		'epos_operate_url' => 'http://paygateway.dev.local/payment/operate',
 		'account' => 'ffffdddd4563eeee',
-    		'key1' => 'ffffdddd8523eeee',
-    		'key2' => 'ffffdddd9573eeee'
-    		'shop_uri'=>'http://mymegasho.ru'
+    'key1' => 'ffffdddd8523eeee',
+    'key2' => 'ffffdddd9573eeee',
+    'hashing_method' => 'md5',
+    'frontend_uri'=>'http://webgateway.dev.local/index.debug.html',
+    'shop_uri'=>'http://shopemulator.dev.local'
 	);
 }

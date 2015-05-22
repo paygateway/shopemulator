@@ -4,6 +4,8 @@ require_once('../config/config.php');
 
 $config = getConfig();
 
+$hashing_method = isset($config['hashing_method']) ? $config['hashing_method'] : 'md5';
+
 $data = $_POST;
 $description = urlencode($data['description']);
 $data['signature'] = "{$data['amount']}:{$data['amountcurr']}:{$data['currency']}:";
@@ -13,7 +15,10 @@ if(!empty($data['backURL'])) {
 	$data['signature'] .= ":{$data['backURL']}";
 }
 $data['signature'] .= ":{$data['key1']}:{$data['key2']}";
-$data['signature'] = strtoupper(md5($data['signature']));
+
+$hashed = ($hashing_method=='md5') ? $hashing_method($data['signature']) : $hashing_method('sha256', $data['signature'], $data['key1'].$data['key2']);
+
+$data['signature'] = strtoupper($hashed);
 
 ?>
 <html>
