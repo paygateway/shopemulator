@@ -1,5 +1,0 @@
-[settings]
-merchant = "1037"
-terminal = "1037-local"
-password = "password"
-
